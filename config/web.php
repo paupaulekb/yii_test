@@ -12,6 +12,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'KOiFg6nNRvX5xlmIfvx96J7ZSgSbrZep',
@@ -53,6 +56,11 @@ $config = [
         */
     ],
     'params' => $params,
+    'controllerMap' => [
+        // объявляет "formphone" контроллер, используя название класса
+        'formphone' => 'app\controllers\FormPhoneController',
+
+    ],
 ];
 
 if (YII_ENV_DEV) {

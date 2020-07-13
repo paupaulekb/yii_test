@@ -9,12 +9,12 @@ use yii\widgets\ActiveForm;
 ?>
 <div class="site-formSearch">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([/*"method"=>"get"*/]); ?>
 
     
         <div class="form-group">
             <?= Html::input("text","search_phone");?>
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton('Искать телефон', ['class' => 'btn btn-primary']) ?>
         </div>
     <?php ActiveForm::end(); ?>
 

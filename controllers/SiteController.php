@@ -62,7 +62,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $phones = new Phones();
+        $c = new FormPhoneController($this->id,$this->module);
+        return $c->actionIndex();
+        /*$phones = new Phones();
         
         $request = Yii::$app->request;
         if($request->post('phone')){
@@ -75,9 +77,9 @@ class SiteController extends Controller
             $list_phone_search = $phones->find()->filterWhere(['like', 'phone', $request->post('search_phone')])->all();
         }
         
-        $list_phone = $phones->findAll(["user_id"=>\Yii::$app->user->id]);
+        $list_phone = $phones->findAll(["user_id"=>\Yii::$app->user->id]);*/
         
-        return $this->render('index',["list_phone"=>$list_phone,"list_phone_search"=>$list_phone_search]);
+        //return $this->render('index'/*,["list_phone"=>$list_phone,"list_phone_search"=>$list_phone_search]*/);
     }
 
     /**
